@@ -1,3 +1,4 @@
+<?php
 $cloudhost = "davis-server1.database.windows.net";
 $username = "Dwhitlock23";
 $password = "tihw_sivad23";
