@@ -2,4 +2,4 @@
 Website for assignment 3 in Cloud Development
 
 Link:
-https://gradeentry.azurewebsites.net/input-service.php
+https://gradeentry.azurewebsites.net
