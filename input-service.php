@@ -11,7 +11,7 @@ catch (PDOException $e) {
 
 $studentID = $_POST("studentID");
 $grades = $_POST("grades");
-
+echo($studentID)
 // $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
 // $stmt->execute([$studentID, $grades]);
 echo("Hello World")
