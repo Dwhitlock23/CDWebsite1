@@ -25,6 +25,9 @@ if ($result = $conn -> query("SELECT studentID, grade FROM grades")){
             echo "<td>" . $row["grade"] . "</td>";
             echo "</tr>";
         }
+else {
+    echo("Empty result")
+}
     ?>
 </table>
 <?php
