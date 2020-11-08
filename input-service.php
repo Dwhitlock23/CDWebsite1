@@ -8,7 +8,7 @@ catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
-
+echo("Hello World")
 $studentID = $_POST("studentID");
 $grades = $_POST("grades");
 // if (empty($studentID)) {
