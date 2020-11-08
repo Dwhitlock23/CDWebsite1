@@ -34,10 +34,11 @@
             <button id="ajaxSubmit">Update via AJAX</button>
             <script src="https://code.jquery.com/jquer-3.5.1.min.js"></script>
             <script>
-                $("#ajaxSubmit").click(function(){
+                $("#ajaxSubmit").click(function(){                    
                     var id = $("#studentID").val();
                     var grade = $("#grades").val();
-                    $.ajax({
+                    alert("button clicked!");
+                    $.ajax({                        
                         url: 'input-service.php',
                         type: 'post',
                         data: {'studentID': id, 'grades': grade },
