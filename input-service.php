@@ -15,14 +15,15 @@ if (empty($studentID)) {
     echo "$studentID is empty";
   } 
 else {
-    echo $studentID;
+    echo "$studentID is not empty";
   }
 if (empty($grades)) {
     echo "$grades is empty";
   } 
-// else {
-//     echo $grades;
-// $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
+else {
+    echo "$studentID is not empty";
+}
+//$sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
 // $stmt->execute([$studentID, $grades]);
 echo("Hello World")
 ?>
