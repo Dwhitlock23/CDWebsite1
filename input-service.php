@@ -24,5 +24,5 @@ catch (PDOException $e) {
 //     echo $grades;
 // $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
 // $stmt->execute([$studentID, $grades]);
-// echo("Hello World")
+echo("Hello World")
 ?>
