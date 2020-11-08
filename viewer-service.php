@@ -8,17 +8,13 @@ catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
-// // SQL Server Extension Sample Code:
-// $connectionInfo = array("UID" => "Dwhitlock23", "pwd" => "{tihw_sivad23}", "Database" => "Grades", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-// $serverName = "tcp:davis-server1.database.windows.net,1433";
-// $conn = sqlsrv_connect($serverName, $connectionInfo);
 //Get Grades
-echo("Before query");
 $stmt = $conn->query('SELECT studentID, grade FROM grades');
-echo("After query1");
+
 ?>
 <table>
     <?php
+    //print result of the query
         while ($row = $stmt->fetch())
         {
             echo "<tr>";
@@ -30,8 +26,7 @@ echo("After query1");
 </table>
 <?php
 //Free up space
-// echo("After query2");
-// $result -> free_result();
+$stmt -> free_result();
 
 //close connection
 $conn -> close();
