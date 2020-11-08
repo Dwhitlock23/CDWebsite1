@@ -13,7 +13,9 @@ catch (PDOException $e) {
 // $serverName = "tcp:davis-server1.database.windows.net,1433";
 // $conn = sqlsrv_connect($serverName, $connectionInfo);
 //Get Grades
+echo("Before query");
 if ($result = $conn -> query("SELECT studentID, grade FROM grades")){
+    echo("After query1");
 ?>
 <table>
     <?php
