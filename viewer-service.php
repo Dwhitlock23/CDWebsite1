@@ -14,20 +14,16 @@ catch (PDOException $e) {
 // $conn = sqlsrv_connect($serverName, $connectionInfo);
 //Get Grades
 echo("Before query");
-if ($result = $conn -> query("SELECT studentID, grade FROM grades")){
-    echo("After query1");
-?>
-<table>
-    <?php
-        while($row = $result-> fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["studentID"] . "</td>";
-            echo "<td>" . $row["grade"] . "</td>";
-            echo "</tr>";
+if ($result = $conn -> query("SELECT studentID, grade FROM grades")){     
+    foreach ($conn->("SELECT studentID, grade FROM grades") as $row) {
+        print $row['studentID'] . "\t";
+        print $row['grades'] . "\n";
         }
-    ?>
-</table>
-<?php
+    
+    }
+   
+
+
     //Free up space
     $result -> free_result();
 }
