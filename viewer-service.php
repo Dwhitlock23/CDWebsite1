@@ -24,12 +24,12 @@ if ($result = $conn -> query("SELECT studentID, grade FROM grades")){
             echo "<td>" . $row["studentID"] . "</td>";
             echo "<td>" . $row["grade"] . "</td>";
             echo "</tr>";
-        }
-        echo("After query2");
+        }      
     ?>
 </table>
 <?php
     //Free up space
+    echo("After query2");
     $result -> free_result();
 }
 //close connection
