@@ -1,6 +1,5 @@
 <?php
 // PHP Data Objects(PDO) Sample Code:
-echo("Before connection");
 try {
     $conn = new PDO("sqlsrv:server = tcp:davis-server1.database.windows.net,1433; Database = Grades", "Dwhitlock23", "{tihw_sivad23}");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -14,15 +13,23 @@ catch (PDOException $e) {
 // $serverName = "tcp:davis-server1.database.windows.net,1433";
 // $conn = sqlsrv_connect($serverName, $connectionInfo);
 //Get Grades
-echo("Before query"); 
-
-foreach ($conn->("SELECT studentID, grade FROM grades") as $row) {
-    print $row['studentID'] . "\t";
-    print $row['grades'] . "\n";
-    }
-
-   
-
+echo("Before query");
+if ($result = $conn -> query("SELECT studentID, grade FROM grades")){
+    echo("After query1");
+?>
+<table>
+    <?php
+        while($row = $result-> fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row["studentID"] . "</td>";
+            echo "<td>" . $row["grade"] . "</td>";
+            echo "</tr>";
+        }
+    ?>
+</table>
+<?php
+    //Free up space
+    $result -> free_result();
 }
 //close connection
 $conn -> close();
