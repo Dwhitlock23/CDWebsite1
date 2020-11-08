@@ -1,5 +1,6 @@
 <?php
 // PHP Data Objects(PDO) Sample Code:
+echo("Before connection");
 try {
     $conn = new PDO("sqlsrv:server = tcp:davis-server1.database.windows.net,1433; Database = Grades", "Dwhitlock23", "{tihw_sivad23}");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,9 +23,6 @@ foreach ($conn->("SELECT studentID, grade FROM grades") as $row) {
 
    
 
-
-    //Free up space
-    $result -> free_result();
 }
 //close connection
 $conn -> close();
