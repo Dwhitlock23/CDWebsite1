@@ -8,9 +8,11 @@ catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
+
 $studentID = $_POST("studentID");
 $grades = $_POST("grades");
-$stmt = $conn->prepare("INSERT INTO grades (studentID, grade) VALUES (?, ?)");
-$stmt->bind_param("id",$studentID, $grades);
-$stmt->execute();
+
+$sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
+$stmt->execute([$studentID, $grades]);
+
 ?>
