@@ -13,14 +13,13 @@ catch (PDOException $e) {
 // $serverName = "tcp:davis-server1.database.windows.net,1433";
 // $conn = sqlsrv_connect($serverName, $connectionInfo);
 //Get Grades
-echo("Before query");
-if ($result = $conn -> query("SELECT studentID, grade FROM grades")){     
-    foreach ($conn->("SELECT studentID, grade FROM grades") as $row) {
-        print $row['studentID'] . "\t";
-        print $row['grades'] . "\n";
-        }
-    
+echo("Before query"); 
+
+foreach ($conn->("SELECT studentID, grade FROM grades") as $row) {
+    print $row['studentID'] . "\t";
+    print $row['grades'] . "\n";
     }
+
    
 
 
