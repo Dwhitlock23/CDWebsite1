@@ -28,8 +28,8 @@ $stmt = $conn->query('SELECT studentID, grade FROM grades');
 //Free up space
 $stmt -> free_result();
 
-$stmt = $conn->execute('INSERT INTO grades (studentID, grade) VALUES (68, 21)');
-$stmt -> free_result();
+$sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
+$conn->prepare($sql)->execute([68, 21]);
 //close connection
 $conn -> close();
 ?>
