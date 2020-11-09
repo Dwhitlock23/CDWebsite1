@@ -24,7 +24,6 @@
                 <input type="text" id="studentID"><br><br>
                 <label for="grades">Grade: </label><br><br>
                 <input type="number" id="grades"><br><br> 
-                <input type="submit" value="Update">
             </form>
 
             <h2>AJAX</h2>
@@ -80,6 +79,7 @@
                     if (status == "success")
                     {
                         $("#gradeArea").html(data);
+                        alert("Table updated!");
                     }
                 },
                 error: function (xhr, desc, err)
