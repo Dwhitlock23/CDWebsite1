@@ -31,4 +31,4 @@ $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->execute([68, 21]);
 
-// ?>
+?>
