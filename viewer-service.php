@@ -10,8 +10,9 @@ catch (PDOException $e) {
 }
 //Get Grades
 $stmt = $conn->query('SELECT studentID, grade FROM grades');
-
+echo "test1";
 ?>
+
 <table>
     <?php
     //print result of the query
@@ -26,12 +27,14 @@ $stmt = $conn->query('SELECT studentID, grade FROM grades');
 </table>
 <?php
 //Free up space
+echo "test2";
 $stmt -> free_result();
-
+echo "test3";
 $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
+echo "test4";
 $conn->prepare($sql)->execute([68, 21]);
 
-echo "test";
+echo "test5";
 //close connection
 $conn -> close();
 ?>
