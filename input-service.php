@@ -18,15 +18,15 @@ echo ("Grade: ");
 // $stmt= $pdo->prepare($sql);
 // $stmt->execute([$name, $surname, $sex]);
 echo("Adding grade 21 for id 68")
-// $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
-// $stmt = $conn->prepare($sql);
+$sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
+$stmt = $conn->prepare($sql);
 // $stmt->execute([68, 21]);
-try {
-   $sql = "INSERT INTO grades (studentID, grade) VALUES (68, 21)"; 
-   $conn->exec($sql);
-    echo "succesful";
-}
-catch (PDOException $e){
-    echo $sql . "<br>" . $e->getMessage();
-}
+// $stmt = $link->prepare('INSERT INTO testtable (name, lastname, age)
+//     VALUES (:fname, :sname, :age)');
+
+// $statement->execute([
+//     'fname' => 'Bob',
+//     'sname' => 'Desaunois',
+//     'age' => '18',
+// ]);
 ?>
