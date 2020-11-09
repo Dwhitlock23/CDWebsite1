@@ -19,7 +19,7 @@ echo ("Grade: ");
 // $stmt->execute([$name, $surname, $sex]);
 echo("Adding grade 21 for id 68")
 $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
-$stmt = $conn->prepare($sql);
+// $stmt = $conn->prepare($sql);
 // $stmt->execute([68, 21]);
 // $stmt = $link->prepare('INSERT INTO testtable (name, lastname, age)
 //     VALUES (:fname, :sname, :age)');
