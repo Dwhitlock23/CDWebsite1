@@ -11,8 +11,7 @@ catch (PDOException $e) {
 
 $studentID = $_POST["studentID"];
 $grades = $_POST["grades"];
-echo $studentID;
-echo $grades;
+
 }
 // $sql = "INSERT INTO users (name, surname, sex) VALUES (?,?,?)";
 // $stmt= $pdo->prepare($sql);
