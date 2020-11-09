@@ -28,7 +28,7 @@ echo "test1";
 <?php
 //Free up space
 echo "test2";
-$stmt -> free_result();
+//$stmt -> free_result();
 echo "test3";
 $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
 echo "test4";
