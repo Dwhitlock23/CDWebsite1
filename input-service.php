@@ -11,18 +11,18 @@ catch (PDOException $e) {
 
 $studentID = $_POST["studentID"];
 $grades = $_POST["grades"];
-// if (empty($studentID)) {
-//     echo "$studentID is empty";
-//   } 
-// else {
-//     echo "$studentID is not empty";
-//   }
-// if (empty($grades)) {
-//     echo "$grades is empty";
-//   } 
-// else {
-//     echo "$studentID is not empty";
-// }
+if (empty($studentID)) {
+    echo "$studentID is empty";
+  } 
+else {
+    echo "$studentID is not empty";
+  }
+if (empty($grades)) {
+    echo "$grades is empty";
+  } 
+else {
+    echo "$studentID is not empty";
+}
 // $sql = "INSERT INTO users (name, surname, sex) VALUES (?,?,?)";
 // $stmt= $pdo->prepare($sql);
 // $stmt->execute([$name, $surname, $sex]);
