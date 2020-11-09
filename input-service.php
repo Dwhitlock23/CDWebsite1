@@ -9,22 +9,10 @@ catch (PDOException $e) {
     die(print_r($e));
 }
 
-// $studentID = $_POST["studentID"];
-// $grades = $_POST["grades"];
+$studentID = $_POST["studentID"];
+$grades = $_POST["grades"];
 
-// echo ("StudentID: " );
-// echo ("Grade: ");
 echo("Adding grade")
-$sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
-$conn->prepare($sql)->execute([65, 31]);
-//$stmt = $conn->prepare($sql);
-//$stmt->execute([68, 21]);
-// $stmt = $link->prepare('INSERT INTO testtable (name, lastname, age)
-//     VALUES (:fname, :sname, :age)');
-
-// $statement->execute([
-//     'fname' => 'Bob',
-//     'sname' => 'Desaunois',
-//     'age' => '18',
-// ]);
+$stmt = $conn->prepare("INSERT INTO grades (studentID, grade) VALUES (?, ?)");
+$stmt->bind_param("id", $studentID, $grades);
 ?>
