@@ -8,9 +8,25 @@ catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
+
+$studentID = $_POST['studentID'];
+$grades = $_POST['grades'];
+if (empty($studentID)) {
+    echo "studentID is empty";
+  } 
+else {
+    echo $studentID;
+    }
+if (empty($grades)) {
+    echo "grades is empty";
+  } 
+else {
+    echo $grades;
+    }
+
 $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
 echo "test4";
-$conn->prepare($sql)->execute([60, 20]);
+$conn->prepare($sql)->execute([60, 19]);
 echo "test5";
 //close connection
 $conn -> close();
