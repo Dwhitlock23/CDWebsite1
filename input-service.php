@@ -8,10 +8,6 @@ catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
-//Get Grades
-$stmt = $conn->query('SELECT studentID, grade FROM grades');
-echo "test1";
-
 $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
 echo "test4";
 $conn->prepare($sql)->execute([60, 20]);
