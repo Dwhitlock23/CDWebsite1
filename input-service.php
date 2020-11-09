@@ -15,8 +15,8 @@ catch (PDOException $e) {
 // echo ("StudentID: " );
 // echo ("Grade: ");
 echo("Adding grade")
-// $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
-// $conn->prepare($sql)->execute([65, 31]);
+$sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
+$conn->prepare($sql)->execute([65, 31]);
 //$stmt = $conn->prepare($sql);
 //$stmt->execute([68, 21]);
 // $stmt = $link->prepare('INSERT INTO testtable (name, lastname, age)
