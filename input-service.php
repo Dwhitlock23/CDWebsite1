@@ -9,8 +9,8 @@ catch (PDOException $e) {
     die(print_r($e));
 }
 
-$studentID = $_POST["studentID"];
-$grades = $_POST["grades"];
+// $studentID = $_POST["studentID"];
+// $grades = $_POST["grades"];
 // if (empty($studentID)) {
 //     echo "$studentID is empty";
 //   } 
