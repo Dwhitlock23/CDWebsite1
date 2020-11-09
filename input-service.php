@@ -24,6 +24,9 @@ $grades = $_POST["grades"];
 //     echo "$studentID is not empty";
 // }
 $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
-$stmt->execute([$studentID, $grades]);
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("id", $studentID, $grades);
+
+$stmt->execute();
 
 ?>
