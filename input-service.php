@@ -9,11 +9,11 @@ catch (PDOException $e) {
     die(print_r($e));
 }
 
-$studentID = $_POST["studentID"];
-$grades = $_POST["grades"];
+// $studentID = $_POST["studentID"];
+// $grades = $_POST["grades"];
 
-echo ("StudentID: " );
-echo ("Grade: ");
+// echo ("StudentID: " );
+// echo ("Grade: ");
 // $sql = "INSERT INTO users (name, surname, sex) VALUES (?,?,?)";
 // $stmt= $pdo->prepare($sql);
 // $stmt->execute([$name, $surname, $sex]);
