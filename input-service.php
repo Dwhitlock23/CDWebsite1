@@ -9,8 +9,8 @@ catch (PDOException $e) {
     die(print_r($e));
 }
 
-$studentID = $_POST["studentID"];
-$grades = $_POST["grades"];
+// $studentID = $_POST["studentID"];
+// $grades = $_POST["grades"];
 
 echo("Adding grade")
 $stmt = $conn->prepare("INSERT INTO grades (studentID, grade) VALUES (?, ?)");
