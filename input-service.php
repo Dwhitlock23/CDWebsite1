@@ -12,9 +12,10 @@ catch (PDOException $e) {
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // collect value of input field
+  // collect value of input fields
     $studentID = $_POST['studentID'];
     $grades = $_POST['grades'];
+    // debug messages:
     if (empty($studentID)) {
         echo "studentID is empty";
     } 
@@ -32,9 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
-echo "test4";
-$conn->prepare($sql)->execute([60, 19]);
-echo "test5";
+$conn->prepare($sql)->execute([$studentID, $grades]);
 //close connection
 $conn -> close();
 ?>
