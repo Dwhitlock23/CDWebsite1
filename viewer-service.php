@@ -30,6 +30,8 @@ $stmt -> free_result();
 
 $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
 $conn->prepare($sql)->execute([68, 21]);
+
+echo "test";
 //close connection
 $conn -> close();
 ?>
