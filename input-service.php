@@ -24,11 +24,12 @@ catch (PDOException $e) {
 //     echo "$studentID is not empty";
 // }
 
+echo("Adding grade 23.1 for id 68")
+$sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
+$stmt = $conn->prepare($sql);
+//$stmt->bind_param("id", $studentID, $grades);
+$stmt->bind_param("id", 68, 23.1);
 
-// $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
-// $stmt = $conn->prepare($sql);
-// $stmt->bind_param("id", $studentID, $grades);
-
-// $stmt->execute();
+$stmt->execute();
 
 // ?>
