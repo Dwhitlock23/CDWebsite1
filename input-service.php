@@ -12,10 +12,10 @@ catch (PDOException $e) {
 //     && $_SERVER['PHP_AUTH_USER'] == 'myuser' 
 //     && $_SERVER['PHP_AUTH_PW'] == 'mypswd'))
 
-if (!(isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) 
-{
-    die()
-}
+// if (!(isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) 
+// {
+//     die()
+// }
       
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // collect value of input fields
