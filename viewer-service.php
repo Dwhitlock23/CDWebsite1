@@ -9,6 +9,7 @@ catch (PDOException $e) {
     die(print_r($e));
 }
 //Get Grades
+echo "test";
 $stmt = $conn->query('SELECT studentID, grade FROM grades');
 ?>
 
