@@ -14,36 +14,33 @@ catch (PDOException $e) {
 
 if (!(isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) 
 {
-    header('WWW-Authenticate: Basic realm="Restricted area"');
-    header('HTTP/1.1 401 Unauthorized');
-    exit;
+    die()
 }
-else{
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      // collect value of input fields
-        $studentID = $_POST['studentID'];
-        $grades = $_POST['grades'];
-        // debug messages:
-        if (empty($studentID)) {
-            echo "studentID is empty";
-        } 
-        else {
-            echo $studentID;
-        }
-        if (empty($grades)) {
-            echo "grades is empty";
-        } 
-        else {
-            echo $grades;
-        }
+      
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // collect value of input fields
+    $studentID = $_POST['studentID'];
+    $grades = $_POST['grades'];
+    // debug messages:
+    if (empty($studentID)) {
+        echo "studentID is empty";
+    } 
+    else {
+        echo $studentID;
     }
-
-
-
-    $sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
-    $conn->prepare($sql)->execute([$studentID, $grades]);
-    //close connection
-    $conn -> close();
+    if (empty($grades)) {
+        echo "grades is empty";
+    } 
+    else {
+        echo $grades;
+    }
 }
+
+
+
+$sql = "INSERT INTO grades (studentID, grade) VALUES (?, ?)";
+$conn->prepare($sql)->execute([$studentID, $grades]);
+//close connection
+$conn -> close();
+
 ?>
