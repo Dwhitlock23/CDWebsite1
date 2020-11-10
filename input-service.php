@@ -25,10 +25,11 @@ else
     $stmt = $conn->prepare('SELECT password from users where username = ?'); //returns null if username doesn't exist
     $stmt->execute([$username]); 
     $row = $stmt->fetch();
-    $passCheck = $row['password'];
- //   $passCheck = 'password';
+    $passCheck = $row;
+    
     if (!isset($passCheck)) 
         die();
+   // $passCheck = 'password';
     if (!($passCheck == 'password')) 
         die(print('passCheck: ' + $passCheck));
     
