@@ -25,7 +25,7 @@ else
     $stmt = $conn->prepare('SELECT password from users where username = ?'); //returns null if username doesn't exist
     $stmt->execute([$username]); 
     $row = $stmt->fetch();
-    $passCheck = $row;
+    $passCheck = $row["password"];
     
     if (!isset($passCheck)) 
         die();
