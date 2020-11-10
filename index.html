@@ -19,10 +19,6 @@
             <h1>
                 Authenticate and Input Grade
             </h1>
-            
-            Username: <input type="text" id="txtUsername" />
-            Password: <input type="text" id="txtPassword" />
-            <br /><br />
             <form method="POST" action="input-service.php">
                 <label for="username">Username: </label><br><br>
                 <input type="text" id="username"><br><br>
@@ -44,11 +40,14 @@
                     var id = $("#studentID").val();
                     var grade = $("#grades").val();                   
                     //alert("Sending Data id: " + id + " grade: " + grade);
-                    alert("Credentials:\n Username: " + user + " Password: " + pass);
+                    //alert("Credentials:\n Username: " + user + " Password: " + pass);
                     $.ajax({                        
                         url: 'input-service.php',
                         type: 'post',
                         data: {'studentID': id, 'grades': grade },
+                        headers :{
+                            'Authorization' : 'Basic ' + btoa(user + ':' + pass)
+                        },
                         success: function(data, status)
                         {
                             if (status == "success")
@@ -63,6 +62,8 @@
                             alert("Error submitting grade.");
                             console.log(xhr);
                             console.log("Details: " + desc + "\nError:" + err);
+                            $("#username").val("")
+                            $("#password").val("") 
                         }
                     });
                 });
