@@ -12,14 +12,25 @@ catch (PDOException $e) {
 //     && $_SERVER['PHP_AUTH_USER'] == 'myuser' 
 //     && $_SERVER['PHP_AUTH_PW'] == 'mypswd'))
 
-// if (!(isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) 
-// {
-//     die()
-// }
+// Basic Authentication
 $username = $_SERVER['PHP_AUTH_USER'];
-if(!isset($username))
+$password = $_SERVER['PHP_AUTH_PW'];
+
+if(!isset($username, $password))
 {
     die();
+}
+else
+{
+    $stmt = $conn->query('SELECT password from users where username = ?'); //returns null if username doesn't exist
+    $stmt->execute([$username]); 
+    $row = $stmt->fetch();
+    $passCheck = $row['password'];
+    if (!isset($passCheck)) 
+        die();
+    if (!($password == $passCheck)) 
+        die();
+    
 }
       
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
