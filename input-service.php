@@ -29,7 +29,7 @@ else
  //   $passCheck = 'password';
     if (!isset($passCheck)) 
         die();
-    if (!($password == $passCheck)) 
+    if (!($password == 'password')) 
         die();
     
 }
