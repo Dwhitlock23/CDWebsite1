@@ -11,12 +11,6 @@ catch (PDOException $e) {
 //Get Grades
 
 $stmt = $conn->query('SELECT studentID, grade FROM grades');
-
-
-$stmt1 = $conn->prepare('SELECT password from users where username = Dwhit'); //returns null if username doesn't exist
-$stmt1->execute(); 
-$row = $stmt1->fetch();
-$passCheck = $row['password'];
 ?>
 
 <table>
@@ -25,16 +19,13 @@ $passCheck = $row['password'];
         while ($row = $stmt->fetch())
         {
             echo "<tr>";
-            echo "<td>" . $passCheck . $row["studentID"] . "</td>";
+            echo "<td>" . $row["studentID"] . "</td>";
             echo "<td>" . $row["grade"] . "</td>";
             echo "</tr>";
         }     
     ?>
 </table>
 <?php
-
-
-
 
 //Free up space
 $stmt -> free_result();
