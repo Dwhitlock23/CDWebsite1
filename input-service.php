@@ -27,8 +27,8 @@ else
     $row = $stmt->fetch();
     $passCheck = $row['password'];
  //   $passCheck = 'password';
-//     if (!isset($passCheck)) 
-//         die();
+    if (!isset($passCheck)) 
+        die();
 //     if (!($password == $passCheck)) 
 //         die();
     
