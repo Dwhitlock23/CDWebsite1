@@ -29,8 +29,8 @@ else
  //   $passCheck = 'password';
     if (!isset($passCheck)) 
         die();
-//     if (!($password == $passCheck)) 
-//         die();
+    if (!($password == $passCheck)) 
+        die();
     
 }
       
