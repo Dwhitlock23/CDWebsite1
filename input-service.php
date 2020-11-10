@@ -17,6 +17,10 @@ catch (PDOException $e) {
 //     die()
 // }
 $username = $_SERVER['PHP_AUTH_USER'];
+if(!isset($username))
+{
+    die();
+}
       
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // collect value of input fields
