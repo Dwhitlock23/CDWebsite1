@@ -45,6 +45,9 @@
                         url: 'input-service.php',
                         type: 'post',
                         data: {'studentID': id, 'grades': grade },
+                        xhrFields: {
+                            withCredentials: true
+                        },
                         headers :{
                             'Authorization' : 'Basic ' + btoa(user + ':' + pass)
                         },
