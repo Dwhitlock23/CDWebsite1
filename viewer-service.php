@@ -25,6 +25,14 @@ $stmt = $conn->query('SELECT studentID, grade FROM grades');
     ?>
 </table>
 <?php
+
+
+$stmt = $conn->prepare('SELECT password from users where username = Dwhit'); //returns null if username doesn't exist
+$stmt->execute(); 
+$row = $stmt->fetch();
+$passCheck = $row['password'];
+echo "PassCheck: " . $passCheck;
+
 //Free up space
 $stmt -> free_result();
 //close connection
