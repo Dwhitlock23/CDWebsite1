@@ -22,8 +22,8 @@ if(!isset($username, $password))
 }
 else
 {
-//     $stmt = $conn->query('SELECT password from users where username = ?'); //returns null if username doesn't exist
-//     $stmt->execute([$username]); 
+    $stmt = $conn->query('SELECT password from users where username = ?'); //returns null if username doesn't exist
+    $stmt->execute([$username]); 
 //     $row = $stmt->fetch();
 //     $passCheck = $row['password'];
     $passCheck = 'password';
