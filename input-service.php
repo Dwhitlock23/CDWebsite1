@@ -17,7 +17,7 @@ catch (PDOException $e) {
 //     die()
 // }
 $username = $_SERVER['PHP_AUTH_USER'];
-if(isset($username))
+if(!isset($username))
 {
     die();
 }
